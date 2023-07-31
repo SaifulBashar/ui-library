@@ -13,7 +13,8 @@
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "demo",
@@ -63,7 +64,9 @@
     "typescript": "^5.0.4",
     "react":"^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup-plugin-typescript2": "^0.29.0"
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-postcss":"^4.0.2",
+    "rollup-plugin-copy":"^3.4.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
