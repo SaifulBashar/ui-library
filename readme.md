@@ -3,7 +3,7 @@
 You can install this demo UI library using npm:
 
 ```
-npm install @saiful_bashar/demo-ui-library
+npm install @saiful_bashar/ui-library
 ```
 
 ## Usage
@@ -12,7 +12,7 @@ To use this demo UI library in your project, import the components you need from
 
 ```jsx
 import React from "react";
-import { Input, Button } from "@saiful_bashar/demo-ui-library";
+import { Input, Button } from "@saiful_bashar/ui-library";
 
 function App() {
   return (
