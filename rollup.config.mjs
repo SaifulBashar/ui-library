@@ -1,7 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
+import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
@@ -24,16 +23,14 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
-      resolve(),
+      resolve({
+        browser: true
+      }),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ useTsconfigDeclarationDir: true}),
       terser(),
     ],
     external: ["react", "react-dom", "styled-components"],
   },
-  {
-    input: "src/index.ts",
-    output: [{ file: "dist/types.d.ts", format: "es" }],
-    plugins: [dts.default()],
-  },
+
 ];
